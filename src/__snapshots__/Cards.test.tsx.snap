@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+Array [
+  <div
+    className="MuiBox-root MuiBox-root-2"
+  >
+    Total: 
+    -53
+  </div>,
+  <div
+    className="MuiBox-root MuiBox-root-45"
+  >
+    <div
+      className="MuiPaper-root MuiPaper-elevation1 MuiCard-root Card MuiPaper-rounded"
+    >
+      <div
+        className="MuiCardContent-root CardContent"
+      >
+        <img
+          alt="Hello World"
+          src="Hello World"
+        />
+        <p
+          className="MuiTypography-root MuiTypography-body1"
+        >
+          <span
+            className="Stat"
+          >
+            Name: 
+          </span>
+          Hello World
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1"
+        >
+          <span
+            className="Stat"
+          >
+            Species: 
+          </span>
+          Hello World
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1"
+        >
+          <span
+            className="Stat"
+          >
+            Type: 
+          </span>
+          Hello World
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1"
+        >
+          <span
+            className="Stat"
+          >
+            Origin: 
+          </span>
+          Hello World
+        </p>
+      </div>
+    </div>
+    <div
+      className="MuiPaper-root MuiPaper-elevation1 MuiCard-root Card MuiPaper-rounded"
+    >
+      <div
+        className="MuiCardContent-root CardContent"
+      >
+        <img
+          alt="Hello World"
+          src="Hello World"
+        />
+        <p
+          className="MuiTypography-root MuiTypography-body1"
+        >
+          <span
+            className="Stat"
+          >
+            Name: 
+          </span>
+          Hello World
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1"
+        >
+          <span
+            className="Stat"
+          >
+            Species: 
+          </span>
+          Hello World
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1"
+        >
+          <span
+            className="Stat"
+          >
+            Type: 
+          </span>
+          Hello World
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1"
+        >
+          <span
+            className="Stat"
+          >
+            Origin: 
+          </span>
+          Hello World
+        </p>
+      </div>
+    </div>
+  </div>,
+]
+`;

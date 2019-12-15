@@ -13,6 +13,6 @@ export default {
           name: 'Earth (C-137)',
         },
       },])
-    })
+    }),
   })
 }
