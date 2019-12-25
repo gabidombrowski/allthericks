@@ -1,8 +1,8 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
-import Cards from "../src/Cards"
-import AutoMockedProvider from "../src/utils/AutoMockedProvider"
-import { MockList } from "graphql-tools"
+import React from "react";
+import { storiesOf } from "@storybook/react";
+import Cards from "../src/Cards";
+import AutoMockedProvider from "../src/utils/AutoMockedProvider";
+import { MockList } from "graphql-tools";
 //import { image, name } from "faker"
 
 // const mockResolvers = {
@@ -24,20 +24,21 @@ import { MockList } from "graphql-tools"
 //   })
 // }
 
-const listLength = 3
+const listLength = 3;
 
 const mockResolvers = {
   Query: () => ({
     characters: () => ({
       info: () => ({
-        count: listLength,
+        count: listLength
       }),
       results: () => new MockList(listLength)
     })
   })
-}
+};
 
-storiesOf('4: AMP with mocks', module)
-  .add('default', () => (
-    <AutoMockedProvider mockResolvers={mockResolvers}><Cards /></AutoMockedProvider>
-  ))
+storiesOf("4: AMP with mocks", module).add("default", () => (
+  <AutoMockedProvider mockResolvers={mockResolvers}>
+    <Cards />
+  </AutoMockedProvider>
+));

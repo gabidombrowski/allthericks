@@ -1,41 +1,41 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode } from "react";
 //import { gql } from 'apollo-boost'
-import { ApolloProvider } from 'react-apollo'
-import { ApolloClient } from 'apollo-client'
-import { InMemoryCache } from 'apollo-cache-inmemory'
-import { SchemaLink } from 'apollo-link-schema'
-import { makeExecutableSchema, addMockFunctionsToSchema } from 'graphql-tools'
-import { printSchema, buildClientSchema } from 'graphql'
-import introspectionResult from './schema.json'
-import mergeResolvers, { CustomResolver } from "./mergeResolvers"
-import globalResolvers from './resolvers'
+import { ApolloProvider } from "react-apollo";
+import { ApolloClient } from "apollo-client";
+import { InMemoryCache } from "apollo-cache-inmemory";
+import { SchemaLink } from "apollo-link-schema";
+import { makeExecutableSchema, addMockFunctionsToSchema } from "graphql-tools";
+import { printSchema, buildClientSchema } from "graphql";
+import introspectionResult from "./schema.json";
+import mergeResolvers, { CustomResolver } from "./mergeResolvers";
+import globalResolvers from "./resolvers";
 
 const AutoMockedProvider: React.FunctionComponent<{
-  children: ReactNode
-  mockResolvers?: CustomResolver
+  children: ReactNode;
+  mockResolvers?: CustomResolver;
 }> = ({ children, mockResolvers }) => {
   const schemaSDL = printSchema(
-    buildClientSchema({ __schema: introspectionResult.__schema as any }),
-  )
+    buildClientSchema({ __schema: introspectionResult.__schema as any })
+  );
 
   const schema = makeExecutableSchema({
     typeDefs: schemaSDL,
     resolverValidationOptions: {
-      requireResolversForResolveType: false,
-    },
-  })
+      requireResolversForResolveType: false
+    }
+  });
 
-  const mergedResolvers = mergeResolvers(globalResolvers, mockResolvers)
+  const mergedResolvers = mergeResolvers(globalResolvers, mockResolvers);
 
   addMockFunctionsToSchema({
     schema,
-    mocks: mergedResolvers,
-  })
+    mocks: mergedResolvers
+  });
 
   const client = new ApolloClient({
     link: new SchemaLink({ schema }),
-    cache: new InMemoryCache(),
-  })
+    cache: new InMemoryCache()
+  });
 
   //  Useful for testing:
 
@@ -63,7 +63,7 @@ const AutoMockedProvider: React.FunctionComponent<{
   //     console.log('result: ', result)
   //   })
 
-  return <ApolloProvider client={client}>{children}</ApolloProvider>
-}
+  return <ApolloProvider client={client}>{children}</ApolloProvider>;
+};
 
-export default AutoMockedProvider
+export default AutoMockedProvider;
