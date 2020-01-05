@@ -12,7 +12,7 @@ import "./App.css";
 
 const RICKS_EPISODES_QUERY = gql`
   {
-    episodes(page: 1, filter: { name: "rick" }) {
+    episodes(filter: { name: "rick" }) {
       info {
         count
       }

@@ -20,7 +20,9 @@ const mockResolvers = {
           origin: {
             name: "Earth (C-137)"
           },
-          status: "Alive"
+          location: {
+            name: "Earth (Replacement Dimension)"
+          }
         }
       ]
     })
