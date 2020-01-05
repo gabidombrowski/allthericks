@@ -10,7 +10,7 @@ import {
 } from "@material-ui/core/";
 import "./App.css";
 
-const MORTYS_QUERY = gql`
+const LOCAL_QUERY = gql`
   {
     characters @client {
       info {
@@ -29,8 +29,8 @@ const MORTYS_QUERY = gql`
   }
 `;
 
-const CardsMorty = () => {
-  const { loading, error, data } = useQuery(MORTYS_QUERY);
+const CardsLocal = () => {
+  const { loading, error, data } = useQuery(LOCAL_QUERY);
 
   if (loading)
     return (
@@ -42,7 +42,7 @@ const CardsMorty = () => {
   if (error) return <Typography>Error :(</Typography>;
   if (!data) return <Typography>No data available...</Typography>;
 
-  const cardsMorty =
+  const cardsLocal =
     data &&
     data.characters.results.map((character: any, index: any) => (
       <Card key={index} className="Card">
@@ -81,10 +81,10 @@ const CardsMorty = () => {
         justifyContent={"center"}
         m={3}
       >
-        {cardsMorty}
+        {cardsLocal}
       </Box>
     </Fragment>
   );
 };
 
-export default CardsMorty;
+export default CardsLocal;

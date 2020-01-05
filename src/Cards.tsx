@@ -20,10 +20,13 @@ const RICKS_QUERY = gql`
         image
         name
         species
-        type
         origin {
           name
         }
+        location {
+          name
+        }
+        type
       }
     }
   }
@@ -57,17 +60,17 @@ const Cards = () => {
             {character.species}
           </Typography>
           <Typography>
-            <span className="Stat">Type: </span>
-            {character.type}
-          </Typography>
-          <Typography>
             <span className="Stat">Origin: </span>
             {character.origin.name}
           </Typography>
+          <Typography>
+            <span className="Stat">Location: </span>
+            {character.location.name}
+          </Typography>
           {/* <Typography>
-          <span className='Stat'>Status: </span>
-          {character.status}
-        </Typography> */}
+            <span className="Stat">Type: </span>
+            {character.status}
+          </Typography> */}
         </CardContent>
       </Card>
     ));

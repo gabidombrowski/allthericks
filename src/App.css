@@ -18,6 +18,11 @@
   text-align: left;
 }
 
+.CardContent img {
+  height: 310px;
+  width: 310px;
+}
+
 .Stat {
   font-weight: 700;
 }

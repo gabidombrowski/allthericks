@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React from "react";
 //import { gql } from 'apollo-boost'
 import { ApolloProvider } from "react-apollo";
 import { ApolloClient } from "apollo-client";
@@ -11,7 +11,7 @@ import mergeResolvers, { CustomResolver } from "./mergeResolvers";
 import globalResolvers from "./resolvers";
 
 const AutoMockedProvider: React.FunctionComponent<{
-  children: ReactNode;
+  children: React.ReactNode;
   mockResolvers?: CustomResolver;
 }> = ({ children, mockResolvers }) => {
   const schemaSDL = printSchema(
@@ -19,10 +19,7 @@ const AutoMockedProvider: React.FunctionComponent<{
   );
 
   const schema = makeExecutableSchema({
-    typeDefs: schemaSDL,
-    resolverValidationOptions: {
-      requireResolversForResolveType: false
-    }
+    typeDefs: schemaSDL
   });
 
   const mergedResolvers = mergeResolvers(globalResolvers, mockResolvers);
@@ -36,32 +33,6 @@ const AutoMockedProvider: React.FunctionComponent<{
     link: new SchemaLink({ schema }),
     cache: new InMemoryCache()
   });
-
-  //  Useful for testing:
-
-  //   const RICKS_QUERY = gql`
-  //   {
-  //     characters(page: 1, filter: { name: "rick" }) {
-  //       info {
-  //         count
-  //       }
-  //       results {
-  //         image
-  //         name
-  //         species
-  //         type
-  //         origin {
-  //           name
-  //         }
-  //       }
-  //     }
-  //   }
-  // `
-
-  //   client.query({ query: RICKS_QUERY }).then(result => {
-  //     console.log('query: ', RICKS_QUERY)
-  //     console.log('result: ', result)
-  //   })
 
   return <ApolloProvider client={client}>{children}</ApolloProvider>;
 };

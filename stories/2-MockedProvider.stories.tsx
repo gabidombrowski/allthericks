@@ -14,8 +14,10 @@ const RICKS_QUERY = gql`
         image
         name
         species
-        type
         origin {
+          name
+        }
+        location {
           name
         }
       }
@@ -39,9 +41,22 @@ const mocks = [
               image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
               name: "Rick Sanchez",
               species: "Human",
-              type: "",
               origin: {
                 name: "Earth (C-137)"
+              },
+              location: {
+                name: "Earth (Replacement Dimension)"
+              }
+            },
+            {
+              image: "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
+              name: "Morty Sanchez",
+              species: "Human",
+              origin: {
+                name: "Earth (C-137)"
+              },
+              location: {
+                name: "Earth (Replacement Dimension)"
               }
             }
           ]
@@ -56,8 +71,3 @@ storiesOf("2: Mocked Provider", module).add("default", () => (
     <Cards />
   </MockedProvider>
 ));
-
-// Talk notes:
-// Add another character (Morty, 2)
-// Demo updating Cards component with additional results detail (status)
-// Demo removing type
