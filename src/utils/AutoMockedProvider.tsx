@@ -7,10 +7,12 @@ import { ApolloClient } from "apollo-client";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { SchemaLink } from "apollo-link-schema";
 import introspectionResult from "./schema.json";
+import { CustomResolver } from "./mergeResolvers.js";
 
 const AutoMockedProvider: React.FunctionComponent<{
   children: React.ReactNode;
-}> = ({ children }) => {
+  mockResolvers?: CustomResolver;
+}> = ({ children, mockResolvers }) => {
   // Get Schema with following command:
   //apollo schema:download --endpoint=https://rickandmortyapi.com/graphql/ schema.json
 
@@ -23,7 +25,8 @@ const AutoMockedProvider: React.FunctionComponent<{
   });
 
   addMockFunctionsToSchema({
-    schema
+    schema,
+    mocks: mockResolvers
   });
 
   const client = new ApolloClient({

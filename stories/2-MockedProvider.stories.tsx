@@ -20,6 +20,7 @@ const RICKS_QUERY = gql`
         location {
           name
         }
+        status
       }
     }
   }
@@ -46,7 +47,8 @@ const mocks = [
               },
               location: {
                 name: "Earth (Replacement Dimension)"
-              }
+              },
+              status: "Alive"
             },
             {
               image: "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
@@ -57,7 +59,20 @@ const mocks = [
               },
               location: {
                 name: "Earth (Replacement Dimension)"
-              }
+              },
+              status: "Alive"
+            },
+            {
+              image: "https://rickandmortyapi.com/api/character/avatar/3.jpeg",
+              name: "Summer Sanchez",
+              species: "Human",
+              origin: {
+                name: "Earth (C-137)"
+              },
+              location: {
+                name: "Earth (Replacement Dimension)"
+              },
+              status: "Alive"
             }
           ]
         }
