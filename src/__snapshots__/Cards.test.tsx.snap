@@ -6,7 +6,7 @@ Array [
     className="MuiBox-root MuiBox-root-2"
   >
     Total: 
-    -53
+    -12
   </div>,
   <div
     className="MuiBox-root MuiBox-root-45"
@@ -47,7 +47,7 @@ Array [
           <span
             className="Stat"
           >
-            Type: 
+            Origin: 
           </span>
           Hello World
         </p>
@@ -57,7 +57,17 @@ Array [
           <span
             className="Stat"
           >
-            Origin: 
+            Location: 
+          </span>
+          Hello World
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1"
+        >
+          <span
+            className="Stat"
+          >
+            Status: 
           </span>
           Hello World
         </p>
@@ -99,7 +109,7 @@ Array [
           <span
             className="Stat"
           >
-            Type: 
+            Origin: 
           </span>
           Hello World
         </p>
@@ -109,7 +119,17 @@ Array [
           <span
             className="Stat"
           >
-            Origin: 
+            Location: 
+          </span>
+          Hello World
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1"
+        >
+          <span
+            className="Stat"
+          >
+            Status: 
           </span>
           Hello World
         </p>
