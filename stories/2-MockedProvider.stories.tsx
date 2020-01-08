@@ -20,6 +20,7 @@ const RICKS_QUERY = gql`
         location {
           name
         }
+        type
       }
     }
   }
@@ -46,7 +47,8 @@ const mocks = [
               },
               location: {
                 name: "Earth (Replacement Dimension)"
-              }
+              },
+              type: ""
             },
             {
               image: "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
@@ -57,7 +59,8 @@ const mocks = [
               },
               location: {
                 name: "Earth (Replacement Dimension)"
-              }
+              },
+              type: ""
             }
           ]
         }
