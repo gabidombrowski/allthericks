@@ -26,6 +26,7 @@ const RICKS_QUERY = gql`
         location {
           name
         }
+        type
       }
     }
   }
@@ -65,6 +66,10 @@ const Cards = () => {
           <Typography>
             <span className="Stat">Location: </span>
             {character.location.name}
+          </Typography>
+          <Typography>
+            <span className="Stat">Type: </span>
+            {character.type}
           </Typography>
         </CardContent>
       </Card>
