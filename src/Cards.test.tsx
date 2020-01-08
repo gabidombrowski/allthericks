@@ -1,5 +1,5 @@
 import React from "react";
-import renderer from "react-test-renderer";
+import renderer, { act } from "react-test-renderer";
 import wait from "waait";
 import Cards from "./Cards";
 import AutoMockedProvider from "utils/AutoMockedProvider";
@@ -11,7 +11,7 @@ it("renders", async () => {
     </AutoMockedProvider>
   );
 
-  await wait(0);
+  await act(() => wait(0));
 
   expect(tree).toMatchSnapshot();
 });
