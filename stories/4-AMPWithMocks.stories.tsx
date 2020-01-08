@@ -2,7 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import Cards from "../src/Cards";
 import AutoMockedProvider from "../src/utils/AutoMockedProvider";
-//import { name } from "faker"
+//import faker from "faker"
 //import { MockList } from "graphql-tools";
 
 const mockResolvers = {
