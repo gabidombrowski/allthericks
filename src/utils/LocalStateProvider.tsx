@@ -11,7 +11,7 @@ const LocalStateProvider: React.FunctionComponent<{
 
   const client = new ApolloClient({
     cache,
-    resolvers: {}
+    resolvers: []
   });
 
   const character = {
