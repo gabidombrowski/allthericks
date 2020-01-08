@@ -3,13 +3,23 @@ import { create, act } from "react-test-renderer";
 import wait from "waait";
 import waitForExpect from "wait-for-expect";
 import Episodes from "./Episodes";
-import AutoMockedProviderMerged from "utils/AutoMockedProviderMerged";
+import AutoMockedProvider from "utils/AutoMockedProvider";
+
+const mockResolvers = {
+  Query: () => ({
+    episodes: () => ({
+      info: () => ({
+        count: 20
+      })
+    })
+  })
+};
 
 it("renders", async () => {
   const component = create(
-    <AutoMockedProviderMerged>
+    <AutoMockedProvider mockResolvers={mockResolvers}>
       <Episodes />
-    </AutoMockedProviderMerged>
+    </AutoMockedProvider>
   );
 
   await act(() => wait(0));
