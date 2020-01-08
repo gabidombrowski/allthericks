@@ -6,7 +6,7 @@ Array [
     className="MuiBox-root MuiBox-root-2"
   >
     Total: 
-    -12
+    -24
   </div>,
   <div
     className="MuiBox-root MuiBox-root-45"
@@ -67,7 +67,7 @@ Array [
           <span
             className="Stat"
           >
-            Status: 
+            Type: 
           </span>
           Hello World
         </p>
@@ -129,7 +129,7 @@ Array [
           <span
             className="Stat"
           >
-            Status: 
+            Type: 
           </span>
           Hello World
         </p>
