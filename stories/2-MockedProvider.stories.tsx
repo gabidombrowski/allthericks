@@ -34,7 +34,7 @@ const mocks = [
       data: {
         characters: {
           info: {
-            count: 20
+            count: 2
           },
           results: [
             {
