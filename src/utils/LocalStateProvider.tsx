@@ -40,7 +40,7 @@ const LocalStateProvider: React.FunctionComponent<{
           __typename: "Info"
         },
         results: results,
-        __typename: "Character"
+        __typename: "Characters"
       }
     }
   });
