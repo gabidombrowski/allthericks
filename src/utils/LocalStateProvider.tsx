@@ -16,7 +16,7 @@ const LocalStateProvider: React.FunctionComponent<{
 
   const character = {
     id: random.uuid(),
-    image: image.imageUrl(310, 310, "cats"),
+    image: image.imageUrl(),
     name: name.findName(),
     species: random.word(),
     type: random.word(),
